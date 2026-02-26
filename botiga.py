@@ -1,3 +1,9 @@
+#CONSTANTS
+DESCOMPTE_ROBA = 0.10          # 10% de descompte per roba
+RECARGA_ELECTRONICA = 0.15     # 15% de recàrrec per electrònica
+XEC_JOVE = 5                    # xec jove per menors de 18 anys
+
+#FUNCIONS
 def calcular(p, t, e):
     # p és el preu, t és el tipus de producte, e és l'edat
     res = p
