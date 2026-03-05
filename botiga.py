@@ -35,3 +35,5 @@ def mostrar_total(preu,tipus, edat):
 
 mostrar_total(100, ROBA, 15)
 mostrar_total(150, ELECTRONICA, 18)
+
+# @JoeL Roca
