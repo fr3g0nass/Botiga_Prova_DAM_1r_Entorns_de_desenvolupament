@@ -3,21 +3,26 @@ DESCOMPTE_ROBA = 0.10          # 10% de descompte per roba
 RECARGA_ELECTRONICA = 0.15     # 15% de recàrrec per electrònica
 XEC_JOVE = 5                    # xec jove per menors de 18 anys
 
+#PRODUCTE
+ROBA = "ROBA"
+ELECTRONICA = "ELECTRONICA"
+
 #FUNCIONS
-def calcular(p, t, e):
-    # p és el preu, t és el tipus de producte, e és l'edat
-    res = p
+def calcular_total(preu, tipus, edat):
     
-    if t == "ROBA":
-        res = p * 0.9 # descompte del 10%
-    elif t == "ELECTRONICA":
-        res = p * 1.15 # recàrrec del 15%
+    total = preu
+    
+    if tipus == "ROBA":
+        total *= (1 - DESCOMPTE_ROBA )# descompte del 10%
+    elif tipus == "ELECTRONICA":
+        total *= (1 + RECARGA_ELECTRONICA) # recàrrec del 15%
         
-    if e < 18:
-        res = res - 5 # xec jove de 5 euros
-        
-    if res < 0:
-        res = 0
+    if edat < 18:
+        total = XEC_JOVE # xec jove de 5 euros
+
+    #PER EVITAR VALORS NEGATIUS    
+    if total < 0:
+        total = 0
         
     print("El total es:")
     print(res)
